@@ -1,7 +1,14 @@
 'use client'
+import { useTheme } from '@emotion/react'
+import { Typography } from '@mui/material';
 import Head from 'next/head'
+import { useSettings } from 'src/hooks/useSettings';
 
 export default function Home() {
+
+  const { settings } = useSettings()
+  console.log('setting', settings);
+
   return (
     <>
       <Head>
@@ -10,7 +17,7 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1>Hello world!</h1>
+      <Typography>Hello world!</Typography>
     </>
   )
 }
